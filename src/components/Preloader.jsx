@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Rocket } from './Icons'
 import './Preloader.css'
 
 function Preloader() {
@@ -24,16 +25,16 @@ function Preloader() {
       <div className="preloader__curtain preloader__curtain--1" />
       <div className="preloader__content">
         <div className="preloader__logo">
-          <span className="preloader__logo-icon">🚀</span>
+          <span className="preloader__logo-mark" aria-hidden="true">
+            <Rocket size={22} />
+          </span>
           <span className="preloader__logo-text">MyProject</span>
         </div>
         <div className="preloader__bar">
-          <div className="preloader__bar-fill" style={{ width: `${progress}%` }}>
-            <span className="preloader__bar-shine" />
-          </div>
+          <div className="preloader__bar-fill" style={{ width: `${progress}%` }} />
         </div>
         <div className="preloader__info">
-          <span className="preloader__label">Memuat pengalaman...</span>
+          <span className="preloader__label">Menyiapkan pengalaman...</span>
           <span className="preloader__percent">{progress}%</span>
         </div>
       </div>

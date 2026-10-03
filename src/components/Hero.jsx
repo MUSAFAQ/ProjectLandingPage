@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
+import { ArrowRight } from './Icons'
 import './Hero.css'
 
-function Typewriter({ text, speed = 45, start = true }) {
+function Typewriter({ text, speed = 38, start = true }) {
   const [displayed, setDisplayed] = useState('')
   const [done, setDone] = useState(false)
 
@@ -50,30 +51,45 @@ function Hero({ startTypewriter }) {
 
   return (
     <section className="hero" ref={ref}>
-      <div className="hero-shape hero-shape--a" />
-      <div className="hero-shape hero-shape--b" />
+      <div className="hero__grid" aria-hidden="true" />
+      <div className="hero__blob hero__blob--a" aria-hidden="true" />
+      <div className="hero__blob hero__blob--b" aria-hidden="true" />
 
-      <div className="hero-content">
-        <h1 className="hero-title" data-reveal>
+      <div className="hero__content">
+        <div className="hero__badge" data-reveal>
+          <span className="hero__badge-dot" />
+          Platform Bisnis Modern
+        </div>
+
+        <h1 className="hero__title" data-reveal>
           <Typewriter
             text="Wujudkan Ide Anda Menjadi Nyata"
-            speed={45}
+            speed={38}
             start={startTypewriter}
           />
         </h1>
-        <p className="hero-subtitle" data-reveal>
+
+        <p className="hero__subtitle" data-reveal>
           Platform terbaik untuk membangun, mengembangkan, dan menskalakan
           bisnis Anda dengan cepat dan mudah.
         </p>
-        <div className="hero-buttons" data-reveal>
-          <button className="btn-primary">
-            <span className="btn-shine" />
-            <span className="btn-label">Mulai Sekarang - Gratis</span>
+
+        <div className="hero__cta" data-reveal>
+          <button className="btn btn--primary" type="button">
+            Mulai Sekarang — Gratis
+            <span className="btn__arrow">
+              <ArrowRight size={18} />
+            </span>
           </button>
-          <button className="btn-secondary">
-            <span className="btn-shine" />
-            <span className="btn-label">Pelajari Lebih Lanjut</span>
+          <button className="btn btn--ghost" type="button">
+            Pelajari Lebih Lanjut
           </button>
+        </div>
+
+        <div className="hero__meta" data-reveal>
+          <span>Dipercaya <strong>10.000+</strong> pengguna</span>
+          <span className="hero__meta-dot" aria-hidden="true" />
+          <span>Uptime <strong>99.9%</strong></span>
         </div>
       </div>
     </section>
