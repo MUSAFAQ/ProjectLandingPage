@@ -2,45 +2,53 @@ import './App.css'
 
 function App() {
   return (
-    <div className="app">
-      <nav className="nav">
+    <div className="app-container">
+      {/* --- NAVBAR --- */}
+      <header className="navbar">
         <div className="logo">🚀 MyProject</div>
-        <div className="links">
+        <nav className="nav-links">
           <a href="#fitur">Fitur</a>
           <a href="#tentang">Tentang</a>
           <button className="btn-login">Login</button>
-        </div>
-      </nav>
+        </nav>
+      </header>
 
-      <section className="hero">
-        <h1>Wujudkan Ide Anda Menjadi Nyata</h1>
-        <p>Platform terbaik untuk membangun, mengembangkan, dan menskalakan bisnis Anda dengan cepat dan mudah.</p>
-        <div className="buttons">
-          <button className="btn-primary">Mulai Sekarang</button>
-          <button className="btn-secondary">Pelajari Lebih Lanjut</button>
-        </div>
-      </section>
+      {/* --- HERO SECTION --- */}
+      <main>
+        <section className="hero">
+          <h1 className="hero-title">Wujudkan Ide Anda Menjadi Nyata</h1>
+          <p className="hero-subtitle">
+            Platform terbaik untuk membangun, mengembangkan, dan menskalakan bisnis Anda dengan cepat dan mudah.
+          </p>
+          <div className="hero-buttons">
+            <button className="btn-primary">Mulai Sekarang - Gratis</button>
+            <button className="btn-secondary">Pelajari Lebih Lanjut</button>
+          </div>
+        </section>
 
-      <section id="fitur" className="features">
-        <h2>Kenapa Memilih Kami?</h2>
-        <div className="grid">
-          <div className="card">
-            <h3>⚡ Super Cepat</h3>
-            <p>Dibangun dengan teknologi terbaru untuk performa maksimal.</p>
+        {/* --- FEATURES SECTION --- */}
+        <section id="fitur" className="features">
+          <h2>Kenapa Memilih Kami?</h2>
+          <div className="feature-grid">
+            <div className="feature-card">
+              <h3>⚡ Super Cepat</h3>
+              <p>Dibangun dengan teknologi terbaru untuk menjamin kecepatan dan performa maksimal.</p>
+            </div>
+            <div className="feature-card">
+              <h3>🎨 Desain Modern</h3>
+              <p>Tampilan antarmuka yang bersih, responsif, dan ramah pengguna.</p>
+            </div>
+            <div className="feature-card">
+              <h3>🔒 Keamanan Ekstra</h3>
+              <p>Data Anda dienkripsi dan disimpan dengan standar keamanan tingkat tinggi.</p>
+            </div>
           </div>
-          <div className="card">
-            <h3>🎨 Desain Modern</h3>
-            <p>Tampilan antarmuka yang bersih, responsif, dan ramah pengguna.</p>
-          </div>
-          <div className="card">
-            <h3>🔒 Keamanan Ekstra</h3>
-            <p>Data Anda dienkripsi dengan standar keamanan tingkat tinggi.</p>
-          </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
+      {/* --- FOOTER --- */}
       <footer className="footer">
-        <p>© 2026 MyProject. Dibuat dengan React & Vite.</p>
+        <p>&copy; {new Date().getFullYear()} MyProject. Dibuat dengan React & Vite.</p>
       </footer>
     </div>
   )
